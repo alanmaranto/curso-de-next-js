@@ -5,6 +5,8 @@ const ProductItem = () => {
   const {
     query: { id },
   } = useRouter();
+
+  console.log(useRouter())
   return <div>Id Producto: {id}</div>;
 };
 
