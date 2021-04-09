@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Header from "../../../components/header";
+import Header from "@components/header";
 
 const Post = () => {
   const router = useRouter();

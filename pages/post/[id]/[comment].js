@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Header from "../../../components/header";
+import Header from "@components/header";
 
 const Comment = () => {
   const router = useRouter();
