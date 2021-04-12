@@ -1,5 +1,8 @@
-import Layout from "components/Layout/Layout";
+import CartProvider from "@store/Cart";
 import { AppProps } from "next/app";
+
+import "semantic-ui-react";
+import "../styles/main.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   // providers -- Context, theme, language, data
@@ -7,9 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   // aditional props
 
   return (
-    <Layout>
+    <CartProvider>
       <Component {...pageProps} />
-    </Layout>
+    </CartProvider>
   );
 }
 

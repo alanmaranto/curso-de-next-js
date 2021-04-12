@@ -1,0 +1,8 @@
+.container {
+  margin: 2rem 0 3rem;
+}
+.container :global(.header) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

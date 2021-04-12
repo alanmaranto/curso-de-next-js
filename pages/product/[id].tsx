@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
+import Layout from '@components/Layout/Layout'
+import ProductSummary from '@components/ProductSummary/ProductSummary'
+
 const ProductItem = () => {
-  const [product, setProduct] = useState<TProduct>();
+  const [product, setProduct] = useState<TProduct | null>(null);
   const {
     query: { id },
   } = useRouter();
@@ -22,10 +25,9 @@ const ProductItem = () => {
   }, [id]);
 
   return (
-    <>
-      <div>Id Producto: {id}</div>
-      <div>Nombre: {product?.name}</div>
-    </>
+    <Layout>
+      {product == null ? null : <ProductSummary product={product} />}
+    </Layout>
   );
 };
 
