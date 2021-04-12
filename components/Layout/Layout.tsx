@@ -8,7 +8,15 @@ const Layout: React.FC = ({ children }) => {
     <div className={styles.container}>
       <Navbar />
       {children}
-      <footer>footer</footer>
+      <footer className="footer">footer</footer>
+      <style jsx>{`
+        .footer {
+          background: red;
+        }
+        div {
+          background: blue;
+        }
+      `}</style>
     </div>
   );
 };
