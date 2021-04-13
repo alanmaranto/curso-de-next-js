@@ -3,17 +3,19 @@ import Layout from "@components/Layout/Layout";
 import KawaiiHeader from "@components/KawaiiHeader/KawaiiHeader";
 import ProductList from "@components/ProductList/ProductList";
 
-const Home = () => {
-  const [productList, setProductList] = useState<TProduct[]>([]);
+export const getServerSideProps = async (params) => {
+  const response = await fetch("http://localhost:3000/api/avo");
+  const { data }: TAPIAvoResponse = await response.json();
 
-  const fetchProductList = async () => {
-    const response = await window.fetch("/api/avo");
-    if (response.status === 200) {
-      const products = await response.json();
-      const { data, length } = products;
-      setProductList(data);
-    }
+  return {
+    props: {
+      productList: data,
+    },
   };
+};
+
+const Home = ({ productList }: { productList: TProduct[] }) => {
+  const fetchProductList = async () => {};
 
   useEffect(() => {
     fetchProductList();
