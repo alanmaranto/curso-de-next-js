@@ -1,5 +1,6 @@
 import React from "react";
 import { Item, Label } from "semantic-ui-react";
+import Image from "next/image";
 
 import AddToCart from "./AddToCart";
 import ProductAttributes from "./ProductAttributes";
@@ -13,7 +14,13 @@ const ProductSummary = ({ product }: ProductSummaryProps) => (
     <Item.Group as="section">
       <Item style={{ alignItems: "center" }}>
         <Item.Image size="medium">
-          <img src={product.image} alt={product.name} />
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={300}
+            height={300}
+          />
+          {/* <img src={product.image} alt={product.name} /> */}
         </Item.Image>
         <Item.Content>
           <Item.Header as="h1">{product.name}</Item.Header>
