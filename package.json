@@ -8,7 +8,8 @@
     "dev": "NODE_OPTIONS='--inspect' next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "export": "next export"
   },
   "author": "",
   "license": "ISC",
