@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IncomingMessage, ServerResponse } from "node:http";
 import DB from "@database";
 import enablePublicAccess from '@cors'
